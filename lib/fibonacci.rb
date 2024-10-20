@@ -12,3 +12,13 @@ def fibs(length, array = [])
   end
   array
 end
+
+def fibs_rec(length, array = [], index = length - 1)
+  if length.between?(1, 2)
+    array = length == 1 ? [0] : [0, 1]
+  else
+    array = fibs_rec(length - 1)
+    array[index] = array[index - 1] + array[index - 2]
+  end
+  array
+end
